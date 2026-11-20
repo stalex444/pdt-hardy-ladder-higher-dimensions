@@ -1,0 +1,167 @@
+version: v0.4
+project:
+  name: The Two-Step Hardy Ladder in Higher Dimensions
+  description: For the ideal two-step Boschi–Hardy ladder with three binary settings per observer
+    and five exact zeros, the fixed-state maximum for four positive Schmidt coefficients is the best
+    of three disjoint pairings. The proof covers arbitrary complex binary effects and gives attaining
+    projective measurements. Equality at the two-qubit plastic-constant value holds exactly when both
+    pairs have smaller-to-larger ratio ρ⁻². A finite mixture of pure components through Schmidt rank
+    four obeys the same ceiling. Every full-rank pure qutrit is strictly below it. A pure state with
+    twelve distinct positive Schmidt weights attains the value through six orthogonal qubit sectors.
+  authors:
+  - Stephanie Alexander
+  responsible_maintainers:
+  - Stephanie Alexander
+  license: MIT
+repository:
+  role: substantive-development
+classification:
+  arxiv:
+  - quant-ph
+  - math-ph
+  msc2020:
+  - 81P40
+  - 81P45
+sources:
+- title: The Two-Step Hardy Ladder in Higher Dimensions
+  authors:
+  - Stephanie Alexander
+  type: original-proof
+  relationship: other
+  location: PROOF.md, HardyExtension/Challenge.lean, HardyExtension/Solution.lean
+  note: Fixed-spectrum pairing theorem, equality classification, higher-rank bounds and constructive
+    examples in the repository.
+- title: 'Ladder Proof of Nonlocality without Inequalities: Theoretical and Experimental Results'
+  authors:
+  - D. Boschi
+  - S. Branca
+  - F. De Martini
+  - L. Hardy
+  id: https://doi.org/10.1103/PhysRevLett.79.2755
+  type: paper
+  relationship: background
+  author_endorsement: not-contacted
+  note: The two-step ladder specializes the Boschi–Hardy five zero constraints and terminal event.
+- title: 'Specker’s Parable of the Over-protective Seer: A Road to Contextuality, Nonlocality and
+    Complementarity'
+  authors:
+  - Yeong-Cherng Liang
+  - Robert W. Spekkens
+  - Howard M. Wiseman
+  id: https://arxiv.org/abs/1010.1273
+  type: paper
+  relationship: background
+  author_endorsement: not-contacted
+  note: Section IV.E discusses numerical evidence and the unrestricted-dimensional question for the
+    related three-setting experiment.
+- title: Hardy-type paradoxes for an arbitrary symmetric bipartite Bell scenario
+  authors:
+  - Kai-Siang Chen
+  - Shiladitya Mal
+  - Gelo Noel M. Tabia
+  - Yeong-Cherng Liang
+  id: https://doi.org/10.1103/PhysRevA.109.042206
+  type: paper
+  relationship: background
+  author_endorsement: not-contacted
+  note: Table I(a) lists the numerical interval for the three-setting binary-outcome ladder.
+related_formalizations:
+- id: https://palomar-registry.org/entry.html?id=PALOMAR-2026-10-30-000005
+  relationship: builds-on
+  note: The registered qubit optimum and equality ratio supply the scalar input.
+- id: https://github.com/stalex444/hardy-ladder/tree/5764ec4a239fcb14f8de263372fc906bd217f349
+  relationship: builds-on
+  note: The solution uses the pinned Lean proof of normalized scalar optimality and its attaining
+    settings.
+status:
+  scope: The fixed-spectrum four-level formula for arbitrary spectral binary effects, coordinating
+    the five exact Hardy zeros, physical attainment and the matching criterion for equality. Finite
+    Schmidt-coordinate ensembles through rank four, arbitrary-dimensional rank-one and complementary
+    endpoints, and a full-rank twelve-level pure-state witness with exact Born probabilities.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms:
+  - propext
+  - Classical.choice
+  - Quot.sound
+automation:
+  methods:
+  - method: agent
+    models:
+    - OpenAI GPT-6
+    framework: OpenAI Codex in ChatGPT Work Mode
+    tool_setup: Lean 4, pinned Mathlib and the registered Hardy proof, with symbolic and numerical
+      cross-checks in Python.
+    cost:
+      wall_time: not tracked
+      spend_usd: not tracked
+      hardware: local machine
+    prompting_notes: Stephanie Alexander requested a higher-dimensional extension of her previously
+      registered two-qubit Hardy result, including the twelve-level example.
+  spend_usd: not tracked
+  notes: AI-assisted mathematical derivation, implementation, review and mechanical verification.
+fidelity:
+  divergences: Each pure component is represented on its positive Schmidt support. For unnormalized
+    coefficients the score scales with their squared norm. The ensemble theorem accepts a given finite
+    decomposition in component coordinates. All forbidden probabilities vanish exactly. Unrestricted
+    higher-rank optimality, bounds for noisy measurements and physical clock identifications remain
+    open here.
+review:
+  status: self-assessed
+  reviewers: []
+  notes: Local verification and source review. External Palomar review is pending.
+alignment:
+  namespace: HardyExtension
+  statements:
+  - source: Exact maximum over all rank-two complex frames
+    lean: HardyExtension.four_level_frame_maximum
+    module: HardyExtension.Solution
+    status: proved
+  - source: Plastic ceiling for the best matching
+    lean: HardyExtension.four_level_ceiling
+    module: HardyExtension.Solution
+    status: proved
+  - source: Necessary and sufficient spectral pairing for equality
+    lean: HardyExtension.four_level_equality
+    module: HardyExtension.Solution
+    status: proved
+  - source: All binary effects through Schmidt rank three
+    lean: HardyExtension.three_level_effect_bound
+    module: HardyExtension.Solution
+    status: proved
+  - source: Strict inequality at full Schmidt rank three
+    lean: HardyExtension.full_rank_three_strict
+    module: HardyExtension.Solution
+    status: proved
+  - source: Rank-one endpoint in any finite dimension
+    lean: HardyExtension.rank_one_endpoint
+    module: HardyExtension.Solution
+    status: proved
+  - source: Codimension-one endpoint in any finite dimension
+    lean: HardyExtension.codimension_one_endpoint
+    module: HardyExtension.Solution
+    status: proved
+  - source: Preservation of all qubit joint probabilities under finite sector lifting
+    lean: HardyExtension.sector_outcome_probability
+    module: HardyExtension.Solution
+    status: proved
+  - source: Twelve distinct Schmidt weights attain the same success
+    lean: HardyExtension.twelve_level_attainment
+    module: HardyExtension.Solution
+    status: proved
+  - source: Sharp matching upper bound for six arbitrary binary effects
+    lean: HardyExtension.four_level_measurement_bound
+    module: HardyExtension.Solution
+    status: proved
+  - source: Plastic ceiling for finite ensembles through Schmidt rank four
+    lean: HardyExtension.four_level_mixture_bound
+    module: HardyExtension.Solution
+    status: proved
+  - source: Exact maximum for all six binary measurements at a fixed four-level spectrum
+    lean: HardyExtension.four_level_measurement_maximum
+    module: HardyExtension.Solution
+    status: proved
+  - source: Spectra admitting equality in the original six-measurement experiment
+    lean: HardyExtension.four_level_measurement_equality
+    module: HardyExtension.Solution
+    status: proved

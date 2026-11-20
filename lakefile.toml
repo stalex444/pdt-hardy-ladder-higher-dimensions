@@ -1,0 +1,83 @@
+name = "hardy_ladder_higher_dimensions"
+defaultTargets = ["HardyExtension", "HardyClockPreparation", "HardyMatrix", "HardyRepeated"]
+
+[[require]]
+name = "hardy_ladder"
+git = "https://github.com/stalex444/hardy-ladder.git"
+rev = "5764ec4a239fcb14f8de263372fc906bd217f349"
+
+[[lean_lib]]
+name = "HardyExtension"
+globs = ["HardyExtension.+"]
+
+[[lean_lib]]
+name = "HardyBalancedPolynomial"
+
+[[lean_lib]]
+name = "HardyBornBridge"
+
+[[lean_lib]]
+name = "HardyComplex"
+
+[[lean_lib]]
+name = "HardyDirectSum"
+
+[[lean_lib]]
+name = "HardyEffects"
+
+[[lean_lib]]
+name = "HardyFourAttainment"
+
+[[lean_lib]]
+name = "HardyFourEquality"
+
+[[lean_lib]]
+name = "HardyFourLevels"
+
+[[lean_lib]]
+name = "HardyFourPairing"
+
+[[lean_lib]]
+name = "HardyFourSharp"
+
+[[lean_lib]]
+name = "HardyGapBalance"
+
+[[lean_lib]]
+name = "HardyMatrix"
+
+[[lean_lib]]
+name = "HardyMixtures"
+
+[[lean_lib]]
+name = "HardyMomentGap"
+
+[[lean_lib]]
+name = "HardyPairBound"
+
+[[lean_lib]]
+name = "HardyRankOne"
+
+[[lean_lib]]
+name = "HardyRepeated"
+
+[[lean_lib]]
+name = "HardySchmidt"
+
+[[lean_lib]]
+name = "HardyTripleGap"
+
+[[lean_lib]]
+name = "HardyBornBridgeEndpoint"
+
+[[lean_lib]]
+name = "HardyFourMeasurements"
+
+[[lean_lib]]
+name = "HardyFourWitness"
+
+[[lean_lib]]
+name = "HardyClockPreparation"
+
+[[lean_lib]]
+name = "HardyFourEnsemble"

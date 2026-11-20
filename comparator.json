@@ -1,0 +1,25 @@
+{
+  "challenge_module": "HardyExtension.Challenge",
+  "solution_module": "HardyExtension.Solution",
+  "theorem_names": [
+    "HardyExtension.four_level_frame_maximum",
+    "HardyExtension.four_level_ceiling",
+    "HardyExtension.four_level_equality",
+    "HardyExtension.three_level_effect_bound",
+    "HardyExtension.full_rank_three_strict",
+    "HardyExtension.rank_one_endpoint",
+    "HardyExtension.codimension_one_endpoint",
+    "HardyExtension.sector_outcome_probability",
+    "HardyExtension.twelve_level_attainment",
+    "HardyExtension.four_level_measurement_bound",
+    "HardyExtension.four_level_mixture_bound",
+    "HardyExtension.four_level_measurement_maximum",
+    "HardyExtension.four_level_measurement_equality"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}
